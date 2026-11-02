@@ -1,33 +1,259 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            background: #f5f1e8;
-            color: #29251f;
-            margin: 0;
-            padding: 50px;
-        }
-
-        h1 {
-            font-size: 56px;
-        }
-
-        p {
-            font-size: 20px;
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4efe6" />
+  <meta name="description" content="Prachi's creative portfolio — brand stories, campaign ideas, poetry, and scripts." />
+  <title>Prachi — Stories, Ideas & Other Feelings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --ink: #25231f;
+      --muted: #77736b;
+      --red: #bd4a35;
+      --pink: #e8b9ae;
+      --green: #66745d;
+      --line: rgba(37,35,31,.18);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow { font: 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
+    .nav { display:flex; justify-content:space-between; align-items:center; padding: 25px 0; border-bottom:1px solid var(--line); }
+    .brand { font: 600 20px var(--serif); letter-spacing:-.04em; }
+    .brand span { color:var(--red); }
+    .navlinks { display:flex; gap:26px; font-size:12px; color:var(--muted); }
+    .navlinks a:hover { color:var(--red); }
+    .hero { min-height: 690px; display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap:50px; padding: 75px 0 90px; }
+    .hero h1 { font: 600 clamp(58px, 8.2vw, 112px)/.98 var(--serif); letter-spacing:-.065em; margin:20px 0 25px; max-width:760px; }
+    .hero h1 em { color:var(--red); font-weight:500; }
+    .hero-copy { font-size:16px; line-height:1.75; max-width:480px; color:#5c5851; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .btn { padding:13px 18px; border:1px solid var(--ink); border-radius:99px; font-size:12px; display:inline-flex; align-items:center; gap:10px; transition:.2s ease; }
+    .btn.primary { background:var(--ink); color:var(--paper); }
+    .btn:hover { transform:translateY(-2px); }
+    .hero-art { position:relative; max-width:440px; width:100%; justify-self:end; aspect-ratio: .84; }
+    .art-paper { position:absolute; inset:6% 10% 8% 4%; background:#d9a89b; border-radius:48% 48% 4% 4%; transform:rotate(-4deg); overflow:hidden; }
+    .art-paper:before { content:""; position:absolute; width:78%; height:78%; left:11%; top:13%; border:1px solid rgba(37,35,31,.45); border-radius:50%; }
+    .art-paper:after { content:""; position:absolute; width:56%; height:56%; left:22%; top:24%; border:1px solid rgba(37,35,31,.45); border-radius:50%; }
+    .sun { position:absolute; width:35%; aspect-ratio:1; border-radius:50%; background:#d65b3f; top:20%; right:14%; }
+    .art-stem { position:absolute; height:66%; width:2px; background:#4b5b45; bottom:4%; left:50%; transform:rotate(20deg); }
+    .leaf { position:absolute; width:32%; height:15%; background:#66745d; border-radius:100% 0 100% 0; }
+    .leaf.one { left:22%; bottom:32%; transform:rotate(25deg); }
+    .leaf.two { left:48%; bottom:48%; transform:rotate(195deg); }
+    .art-note { position:absolute; right:-2%; bottom:2%; background:var(--paper); border:1px solid var(--line); padding:15px 18px; transform:rotate(5deg); font:italic 18px var(--serif); box-shadow:5px 8px 0 rgba(37,35,31,.06); }
+    .art-number { position:absolute; top:0; left:0; font:11px var(--mono); }
+    .ticker { background:var(--red); color:#f9eee5; overflow:hidden; padding:13px 0; }
+    .ticker-track { display:flex; width:max-content; gap:30px; animation: move 28s linear infinite; font:11px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+    .ticker-track span { white-space:nowrap; }
+    @keyframes move { to { transform:translateX(-50%); } }
+    section { padding:105px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:42px; }
+    .section-head h2 { font:500 clamp(38px,5vw,66px)/1.04 var(--serif); letter-spacing:-.05em; margin:10px 0 0; }
+    .section-head p { max-width:360px; color:var(--muted); font-size:13px; line-height:1.7; margin:0; }
+    .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+    .project { display:block; }
+    .project-visual { aspect-ratio:1.28; padding:25px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; transition:transform .25s ease; }
+    .project:hover .project-visual { transform:translateY(-4px); }
+    .project-visual h3 { position:relative; z-index:2; font:600 clamp(30px,4vw,55px)/1 var(--serif); letter-spacing:-.06em; text-align:center; max-width:90%; }
+    .project-visual .mini { position:absolute; top:18px; left:20px; font:10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    .project-visual .corner { position:absolute; right:20px; bottom:18px; font:11px var(--mono); }
+    .visual-mug { background:#d6d2bd; }
+    .visual-mug h3 { color:#4c5143; }
+    .visual-mug:after { content:""; width:150px; height:180px; border:3px solid #f4efe6; border-radius:10px 10px 55px 55px; position:absolute; right:10%; bottom:-30px; transform:rotate(-12deg); opacity:.8; }
+    .visual-notebook { background:#c76b54; color:#f8e8d7; }
+    .visual-notebook h3 { font-style:italic; }
+    .visual-notebook:after { content:""; position:absolute; width:48%; height:70%; background:#e9c9a5; left:26%; top:18%; transform:rotate(8deg); box-shadow:10px 10px 0 rgba(36,31,25,.15); }
+    .visual-notebook h3 { z-index:3; }
+    .visual-luggage { background:#d8bda0; }
+    .visual-luggage h3 { color:#4b382c; }
+    .visual-luggage:after { content:""; position:absolute; width:35%; height:62%; border:3px solid #8e6549; border-radius:18px; bottom:-12%; right:14%; transform:rotate(9deg); }
+    .visual-poetry { background:#d7d9cf; }
+    .visual-poetry h3 { color:#52604b; font-size:clamp(35px,5vw,68px); }
+    .visual-poetry:after { content:""; position:absolute; width:40%; height:40%; border:1px solid #52604b; border-radius:50%; left:30%; top:25%; }
+    .project-info { display:flex; justify-content:space-between; align-items:start; gap:15px; padding:17px 2px 0; }
+    .project-info h3 { font-size:14px; margin:0 0 6px; font-weight:600; }
+    .project-info p { font-size:12px; color:var(--muted); margin:0; line-height:1.6; }
+    .project-info .arrow { font-size:20px; }
+    .about { background:#e8e1d5; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:85px; align-items:start; }
+    .about-stamp { aspect-ratio:1; border:1px solid var(--red); color:var(--red); border-radius:50%; display:grid; place-items:center; text-align:center; transform:rotate(-12deg); max-width:300px; margin:20px auto; }
+    .about-stamp span { font:italic 29px/1.2 var(--serif); }
+    .about-copy h2 { font:500 clamp(38px,5vw,65px)/1.04 var(--serif); letter-spacing:-.05em; margin:10px 0 25px; }
+    .about-copy p { color:#5f5a52; line-height:1.85; font-size:15px; max-width:650px; }
+    .values { display:flex; flex-wrap:wrap; gap:9px; margin-top:27px; }
+    .values span { border:1px solid var(--line); border-radius:99px; padding:9px 13px; font:10px var(--mono); text-transform:uppercase; letter-spacing:.07em; }
+    .playground { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .play-card { min-height:260px; padding:30px; border:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; }
+    .play-card:nth-child(2) { background:#d8d8ca; }
+    .play-card:nth-child(3) { background:#ead0c4; }
+    .play-card:nth-child(4) { background:#e4d8bc; }
+    .play-card h3 { font:italic 35px/1.1 var(--serif); margin:18px 0; }
+    .play-card p { color:#68635a; line-height:1.7; font-size:13px; max-width:380px; }
+    .play-card .index { font:11px var(--mono); color:var(--muted); }
+    .contact { background:var(--ink); color:var(--paper); padding:100px 0 35px; }
+    .contact .eyebrow { color:#b8b1a6; }
+    .contact h2 { font:500 clamp(48px,8vw,100px)/.98 var(--serif); letter-spacing:-.06em; max-width:850px; margin:18px 0 28px; }
+    .contact h2 em { color:#d88d7a; }
+    .contact-copy { color:#c4bdb2; font-size:14px; line-height:1.7; max-width:450px; }
+    .contact-links { display:flex; gap:12px; flex-wrap:wrap; margin:30px 0 75px; }
+    .contact .btn { border-color:#aaa398; }
+    .contact .btn.primary { background:var(--paper); color:var(--ink); border-color:var(--paper); }
+    footer { border-top:1px solid rgba(244,239,230,.2); padding-top:20px; display:flex; justify-content:space-between; gap:15px; font:10px var(--mono); color:#a9a297; letter-spacing:.05em; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 32px, 600px); }
+      .nav { align-items:flex-start; gap:15px; }
+      .navlinks { gap:12px; flex-wrap:wrap; justify-content:flex-end; font-size:11px; }
+      .hero { grid-template-columns:1fr; padding:60px 0 70px; gap:35px; min-height:unset; }
+      .hero-art { justify-self:center; max-width:340px; }
+      .hero h1 { font-size:clamp(58px,15vw,90px); }
+      section { padding:75px 0; }
+      .section-head { display:block; }
+      .section-head p { margin-top:18px; }
+      .work-grid,.about-grid,.playground { grid-template-columns:1fr; }
+      .about-grid { gap:35px; }
+      .about-stamp { max-width:220px; }
+      .project-visual { aspect-ratio:1.1; }
+      .contact { padding-top:75px; }
+      footer { flex-direction:column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Ideas that feel something.</h1>
-    <p>
-        I explore stories, poetry, and brand communication
-        through emotion, observation, and everyday life.
-    </p>
+  <header class="wrap nav">
+    <a class="brand" href="#top">prachi<span>.</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#work">Selected work</a>
+      <a href="#about">About</a>
+      <a href="#playground">Playground</a>
+      <a href="#contact">Say hello</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">A creative practice by Prachi · 2026</div>
+        <h1>Making ideas<br>feel like <em>something.</em></h1>
+        <p class="hero-copy">I find stories in the ordinary, turn feelings into words, and look for the little human truth hiding inside a brand.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">Explore my work <span>↘</span></a>
+          <a class="btn" href="#contact">Let’s make something <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Abstract warm-toned botanical artwork">
+        <div class="art-number">NOTES FROM THE IN-BETWEEN / 001</div>
+        <div class="art-paper"><div class="sun"></div><div class="art-stem"></div><div class="leaf one"></div><div class="leaf two"></div></div>
+        <div class="art-note">A thought, growing.</div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Brand stories ✳ Human truths ✳ Poetry ✳ Campaigns ✳ Scripts ✳ Curious observations ✳</span>
+        <span>Brand stories ✳ Human truths ✳ Poetry ✳ Campaigns ✳ Scripts ✳ Curious observations ✳</span>
+      </div>
+    </div>
+
+    <section class="wrap" id="work">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">01 / Selected work</div><h2>Thoughts with<br>a little shape.</h2></div>
+        <p>Some ideas are made for brands. Some are just things I couldn’t leave unsaid. This is a small collection of both.</p>
+      </div>
+      <div class="work-grid">
+        <a class="project reveal" href="#contact">
+          <div class="project-visual visual-mug"><span class="mini">Brand concept / 01</span><h3>The mug<br>that knows you.</h3><span class="corner">A little everyday love ↗</span></div>
+          <div class="project-info"><div><h3>Made personal, one sip at a time</h3><p>A campaign thought about how an ordinary object becomes yours.</p></div><span class="arrow">↗</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-visual visual-notebook"><span class="mini">Brand concept / 02</span><h3>Every page<br>has a life.</h3><span class="corner">For all the things we carry ↗</span></div>
+          <div class="project-info"><div><h3>A notebook beyond notes</h3><p>One product. A shopkeeper’s accounts, a child’s paper boat, a love letter.</p></div><span class="arrow">↗</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-visual visual-luggage"><span class="mini">Campaign thought / 03</span><h3>A little home<br>in your suitcase.</h3><span class="corner">The things parents pack ↗</span></div>
+          <div class="project-info"><div><h3>Travel, with a side of achaar</h3><p>An affectionate look at the extra things Indian parents pack for the journey.</p></div><span class="arrow">↗</span></div>
+        </a>
+        <a class="project reveal" href="#contact">
+          <div class="project-visual visual-poetry"><span class="mini">Words / 04</span><h3>Some feelings<br>need a page.</h3><span class="corner">Poetry & fragments ↗</span></div>
+          <div class="project-info"><div><h3>Notes from the heart</h3><p>Poetry, tiny stories, and sentences that stayed a little longer.</p></div><span class="arrow">↗</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-stamp reveal"><span>Curious<br>by nature.<br><i>Creative</i><br>by choice.</span></div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">02 / A little about me</div>
+          <h2>Part researcher.<br>Part storyteller.<br><em>Always observing.</em></h2>
+          <p>I’m Prachi. My world sits somewhere between technology and tenderness: I’m drawn to how people think, what they feel, and the stories they tell without even noticing.</p>
+          <p>I love writing poetry, shaping brand ideas, and finding an honest angle that makes a campaign feel less like an advertisement—and more like a moment someone recognises.</p>
+          <div class="values"><span>Human-first ideas</span><span>Honest storytelling</span><span>Everyday observations</span><span>Words with feeling</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="playground">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">03 / The playground</div><h2>Things I like<br>to make.</h2></div>
+        <p>A few creative corners I keep coming back to. The work is always evolving—just like the person making it.</p>
+      </div>
+      <div class="playground">
+        <article class="play-card reveal"><span class="index">A — 01</span><div><h3>Brand storytelling</h3><p>Finding the emotional truth behind a product and giving it a voice that sounds like a person.</p></div></article>
+        <article class="play-card reveal"><span class="index">A — 02</span><div><h3>Campaign concepts</h3><p>Small observations, unexpected angles, and ideas that make people pause, smile, or feel seen.</p></div></article>
+        <article class="play-card reveal"><span class="index">A — 03</span><div><h3>Poetry & scripts</h3><p>Hindi, Urdu, Punjabi, and English—little worlds built from feelings, memories, and moments.</p></div></article>
+        <article class="play-card reveal"><span class="index">A — 04</span><div><h3>Visual experiments</h3><p>Playing with art direction, mood, composition, and the feeling a frame can hold.</p></div></article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">04 / Open to conversations</div>
+        <h2>Have a story?<br>Let’s give it <em>a feeling.</em></h2>
+        <p class="contact-copy">I’m open to creative collaborations, brand projects, scriptwriting, and conversations that begin with “what if?”</p>
+        <div class="contact-links">
+          <!-- Replace the email and social links below with your own details. -->
+          <a class="btn primary" href="mailto:hello@example.com">Email me ↗</a>
+          <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+        <footer><span>© <span id="year">2026</span> Prachi · Made with curiosity</span><span>Words, ideas & other feelings.</span><a href="#top">Back to top ↑</a></footer>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
+'''
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created {path} ({path.stat().st_size:,} bytes)")
