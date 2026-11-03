@@ -1,227 +1,188 @@
 <!-- from pathlib import Path
 
-paperboat = r''' -->
+html = r''' -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4efe6">
-  <meta name="description" content="A self-initiated creative campaign concept for Paper Boat Aam Panna by Prachi.">
-  <title>Paper Boat — The Taste of Being Little | Prachi</title>
+  <meta name="theme-color" content="#f3eee5">
+  <meta name="description" content="Prachi's creative practice across poetry, advertising, brand storytelling, visual design and brand communication research.">
+  <title>Prachi — Words, Worlds & Ways of Seeing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --paper:#f4efe6; --ink:#28261f; --muted:#777267; --green:#526348;
-      --mango:#d98b43; --rust:#b9533e; --pale:#e4d7bb; --line:rgba(40,38,31,.18);
-      --serif:"Playfair Display",Georgia,serif; --sans:"DM Sans",Arial,sans-serif; --mono:"DM Mono",monospace;
+    :root{
+      --paper:#f3eee5;--ink:#292720;--muted:#777267;--rust:#b95740;
+      --sage:#66745d;--clay:#d8b9a5;--line:rgba(41,39,32,.19);
+      --serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}
     a{color:inherit;text-decoration:none}
-    .wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-    .mono,.eyebrow{font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
-    .muted{color:var(--muted)}
-    .topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
-    .brand{font:600 20px var(--serif);letter-spacing:-.04em}.brand span{color:var(--rust)}
-    .back{font-size:12px;color:var(--muted)}.back:hover{color:var(--rust)}
-    .hero{padding:80px 0 65px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
-    .hero h1{font:600 clamp(56px,8vw,104px)/.94 var(--serif);letter-spacing:-.065em;margin:22px 0}
-    .hero h1 em{font-weight:500;color:var(--green)}
-    .dek{font-size:17px;line-height:1.8;max-width:560px;color:#625e54}
-    .hero-visual{position:relative;min-height:440px;background:#d7d3bd;overflow:hidden;display:grid;place-items:center}
-    .sun{position:absolute;width:190px;height:190px;background:#e6a65d;border-radius:50%;top:45px;right:40px}
-    .horizon{position:absolute;bottom:0;left:0;right:0;height:43%;background:#8b9a70;clip-path:polygon(0 32%,20% 10%,42% 38%,62% 0,82% 25%,100% 8%,100% 100%,0 100%)}
-    .water{position:absolute;bottom:0;height:20%;width:100%;background:#a9b7a2}
-    .paperboat{position:absolute;left:22%;bottom:23%;width:190px;height:100px;background:#f4efe6;clip-path:polygon(0 15%,50% 100%,100% 15%,50% 42%);transform:rotate(-5deg);filter:drop-shadow(8px 10px 0 rgba(40,38,31,.12))}
-    .hero-stamp{position:absolute;left:20px;top:20px;color:#5e6250}
-    .visual-caption{position:absolute;right:18px;bottom:15px;font:italic 17px var(--serif);color:#f4efe6}
-    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-    .meta span{border:1px solid var(--line);border-radius:50px;padding:8px 11px;font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-    .disclaimer{margin-top:20px;font-size:11px;line-height:1.6;color:var(--muted);max-width:500px}
-    .band{background:var(--green);color:#f6efe3;padding:18px 0;overflow:hidden}
-    .band p{margin:0;text-align:center;font:italic clamp(20px,3vw,34px) var(--serif)}
-    section{padding:90px 0}
-    .section-title{display:grid;grid-template-columns:.65fr 1.35fr;gap:35px;margin-bottom:40px}
-    .section-title h2{font:500 clamp(38px,5.5vw,66px)/1.03 var(--serif);letter-spacing:-.05em;margin:12px 0}
-    .section-title p{color:var(--muted);font-size:14px;line-height:1.8;max-width:650px;margin:10px 0}
-    .insight{background:#e8dfcf}
-    .insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .insight-card{padding:30px;border:1px solid rgba(40,38,31,.16);min-height:240px}
-    .insight-card h3{font:italic 30px var(--serif);margin:20px 0 12px}
-    .insight-card p{font-size:14px;line-height:1.8;color:#615c51;margin:0}
-    .big-quote{font:italic clamp(28px,4vw,48px)/1.2 var(--serif);max-width:850px;margin:35px 0 0}
-    .storyboard{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .scene{border:1px solid var(--line);background:#f9f5ed}
-    .scene-art{aspect-ratio:1.04;position:relative;overflow:hidden;display:grid;place-items:center}
-    .scene-art .number{position:absolute;top:14px;left:15px;font:10px var(--mono);letter-spacing:.1em}
-    .scene-art .artline{position:absolute;left:0;right:0;bottom:0;height:30%;background:#899471}
-    .scene-art .circle{position:absolute;width:28%;aspect-ratio:1;border-radius:50%;background:#e4a95f;top:16%;right:15%}
-    .scene-art .kid{position:absolute;bottom:23%;left:40%;width:19%;height:35%;background:#b65b45;border-radius:50% 50% 20% 20%}
-    .scene-art .head{position:absolute;bottom:54%;left:43%;width:13%;aspect-ratio:1;border-radius:50%;background:#8d5c3e}
-    .scene-art .boat{position:absolute;bottom:17%;left:15%;width:32%;height:22%;background:#f5efe5;clip-path:polygon(0 0,50% 100%,100% 0,50% 32%)}
-    .scene:nth-child(2) .scene-art{background:#d8c3a0}
-    .scene:nth-child(2) .artline{background:#b7a17d;height:42%}
-    .scene:nth-child(2) .circle{background:#d87a4d;right:10%;top:10%}
-    .scene:nth-child(2) .kid{background:#66765b;left:25%;height:29%;bottom:33%}
-    .scene:nth-child(2) .head{left:28%;bottom:60%}
-    .scene:nth-child(2) .boat{left:55%;bottom:25%;transform:rotate(8deg)}
-    .scene:nth-child(3) .scene-art{background:#b8c0a5}
-    .scene:nth-child(3) .artline{background:#8c9b78;height:23%}
-    .scene:nth-child(3) .circle{width:20%;top:20%;right:20%;background:#f1d19a}
-    .scene:nth-child(3) .kid{background:#d17a4d;left:65%;height:34%;bottom:23%}
-    .scene:nth-child(3) .head{left:68%;bottom:56%}
-    .scene:nth-child(3) .boat{left:23%;bottom:20%;width:38%;height:25%}
-    .scene-copy{padding:22px}
-    .scene-copy h3{font:italic 25px var(--serif);margin:10px 0}
-    .scene-copy p{font-size:13px;line-height:1.75;color:var(--muted);margin:0}
-    .script{background:#d7d3bd}
-    .script-box{max-width:850px;margin:auto;padding:clamp(28px,6vw,65px);border:1px solid rgba(40,38,31,.2);background:#e7e2d2}
-    .script-box h3{font:italic 35px var(--serif);margin:0 0 25px}
-    .script-box p{font:16px/1.9 var(--serif);margin:0 0 16px}
-    .script-box .direction{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin:24px 0 8px}
-    .campaign-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .campaign-card{padding:28px;border:1px solid var(--line);min-height:220px}
-    .campaign-card:nth-child(2){background:#e4d7bb}
-    .campaign-card:nth-child(3){background:#d8dfd0}
-    .campaign-card:nth-child(4){background:#e7c7b8}
-    .campaign-card h3{font:italic 29px var(--serif);margin:18px 0 12px}
-    .campaign-card p{font-size:13px;line-height:1.8;color:#625d53;margin:0}
-    .closing{background:var(--rust);color:#f8eee2;padding:80px 0}
-    .closing h2{font:500 clamp(42px,7vw,82px)/1 var(--serif);letter-spacing:-.06em;margin:20px 0}
-    .closing p{max-width:650px;color:#f1d9ce;font-size:14px;line-height:1.8}
-    .closing .btn{display:inline-block;border:1px solid #f8eee2;border-radius:99px;padding:13px 17px;font-size:12px;margin-top:18px}
-    footer{padding:22px 0;display:flex;justify-content:space-between;gap:15px;font:10px var(--mono);color:var(--muted)}
-    @media(max-width:760px){
-      .wrap{width:calc(100% - 32px)}.hero{grid-template-columns:1fr;padding:55px 0;gap:30px}
-      .hero-visual{min-height:340px}.section-title{grid-template-columns:1fr;gap:8px}
-      .storyboard{grid-template-columns:1fr}.scene-art{aspect-ratio:1.25}
-      .insight-grid,.campaign-grid{grid-template-columns:1fr}section{padding:65px 0}
-      footer{flex-direction:column}
+    .wrap{width:min(1180px,calc(100% - 52px));margin:0 auto}
+    .eyebrow{font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(243,238,229,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+    .logo{font:600 22px var(--serif);letter-spacing:-.06em;white-space:nowrap}.logo b{color:var(--rust)}
+    .navlinks{display:flex;align-items:center;gap:clamp(12px,2.1vw,28px);font-size:11px;color:#625e55}
+    .navlinks a{transition:color .2s}.navlinks a:hover{color:var(--rust)}
+    .navlinks .contact-link{border:1px solid var(--ink);border-radius:30px;padding:10px 14px;color:var(--ink)}
+    .hero{min-height:680px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:55px;padding:78px 0 90px}
+    .hero h1{font:500 clamp(62px,9vw,116px)/.91 var(--serif);letter-spacing:-.075em;margin:23px 0 28px}
+    .hero h1 em{color:var(--rust);font-weight:500}
+    .hero-copy{font-size:15px;line-height:1.85;color:#625e55;max-width:520px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+    .button{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--ink);border-radius:50px;padding:13px 17px;font-size:12px;transition:transform .2s,background .2s}
+    .button:hover{transform:translateY(-2px)}.button.dark{background:var(--ink);color:var(--paper)}
+    .hero-art{position:relative;aspect-ratio:.88;max-width:460px;width:100%;justify-self:end}
+    .art-base{position:absolute;inset:6% 7% 7% 5%;background:#d9d3bd;border-radius:48% 48% 3% 3%;overflow:hidden;transform:rotate(-3deg)}
+    .art-sun{position:absolute;width:39%;aspect-ratio:1;border-radius:50%;background:#d16c4e;right:13%;top:17%}
+    .art-ring{position:absolute;width:69%;aspect-ratio:1;border:1px solid rgba(41,39,32,.55);border-radius:50%;left:15%;top:19%}
+    .art-ring:after{content:"";position:absolute;inset:15%;border:1px solid rgba(41,39,32,.45);border-radius:50%}
+    .art-stem{position:absolute;width:2px;height:62%;background:#53634b;bottom:2%;left:48%;transform:rotate(17deg)}
+    .art-leaf{position:absolute;width:31%;height:14%;background:#718064;border-radius:100% 0 100% 0}
+    .art-leaf.a{left:20%;bottom:33%;transform:rotate(20deg)}.art-leaf.b{left:49%;bottom:48%;transform:rotate(195deg)}
+    .art-note{position:absolute;right:-1%;bottom:3%;padding:16px 19px;background:var(--paper);border:1px solid var(--line);font:italic 18px var(--serif);transform:rotate(5deg);box-shadow:5px 7px 0 rgba(41,39,32,.06)}
+    .art-mark{position:absolute;top:0;left:0;font:10px var(--mono);letter-spacing:.1em}
+    .marquee{background:var(--rust);color:#f6eee4;padding:14px 0;overflow:hidden}
+    .marquee-track{display:flex;width:max-content;gap:28px;animation:slide 30s linear infinite;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    .marquee-track span{white-space:nowrap}@keyframes slide{to{transform:translateX(-50%)}}
+    section.content{padding:100px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:42px}
+    .section-head h2{font:500 clamp(40px,5.6vw,70px)/1.02 var(--serif);letter-spacing:-.06em;margin:12px 0 0}
+    .section-head p{max-width:400px;font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+    .discipline-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .discipline{min-height:300px;padding:27px;position:relative;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s}
+    .discipline:hover{transform:translateY(-4px)}
+    .discipline:nth-child(1){background:#e5d9c5}.discipline:nth-child(2){background:#d4d8c8}
+    .discipline:nth-child(3){background:#e6c5b8}.discipline:nth-child(4){background:#d9d3bd}
+    .discipline .num{font:11px var(--mono);color:#696459}
+    .discipline h3{font:500 clamp(32px,4vw,51px)/1.02 var(--serif);letter-spacing:-.045em;margin:18px 0 12px;max-width:440px}
+    .discipline p{max-width:430px;font-size:13px;line-height:1.8;color:#625d53;margin:0}
+    .discipline .link{align-self:flex-end;font-size:22px;margin-top:25px}
+    .discipline .decor{position:absolute;right:-32px;bottom:-54px;width:190px;height:190px;border:1px solid rgba(41,39,32,.23);border-radius:50%;pointer-events:none}
+    .discipline .decor:after{content:"";position:absolute;inset:23px;border:1px solid rgba(41,39,32,.2);border-radius:50%}
+    .selected{background:#e8e1d5}
+    .projects{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    .project{display:block}
+    .project-visual{position:relative;min-height:350px;aspect-ratio:1.18;overflow:hidden;display:grid;place-items:center;padding:25px;transition:transform .25s}
+    .project:hover .project-visual{transform:translateY(-4px)}
+    .project-visual h3{font:500 clamp(34px,5vw,62px)/.98 var(--serif);letter-spacing:-.06em;text-align:center;position:relative;z-index:2}
+    .project-visual .tag{position:absolute;top:18px;left:18px;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .paperboat-visual{background:#d7d3bd;color:#4e5845}
+    .paperboat-visual:before{content:"";position:absolute;width:40%;aspect-ratio:1;background:#dfa45a;border-radius:50%;right:11%;top:12%}
+    .paperboat-visual:after{content:"";position:absolute;bottom:7%;left:15%;width:72%;height:27%;background:#879773;clip-path:polygon(0 35%,20% 0,45% 48%,68% 8%,100% 30%,100% 100%,0 100%)}
+    .poetry-visual{background:#bc6048;color:#f7eee4}
+    .poetry-visual:before{content:"";position:absolute;width:60%;height:70%;background:#e8c9a6;transform:rotate(8deg);box-shadow:10px 10px 0 rgba(41,39,32,.12)}
+    .poetry-visual h3{font-style:italic}
+    .project-info{display:flex;justify-content:space-between;gap:16px;padding:16px 2px}
+    .project-info h4{font-size:14px;margin:0 0 6px}.project-info p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
+    .about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:75px;align-items:center}
+    .seal{width:min(270px,100%);aspect-ratio:1;border:1px solid var(--rust);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--rust);transform:rotate(-10deg);margin:auto}
+    .seal span{font:italic 30px/1.25 var(--serif)}
+    .about-copy h2{font:500 clamp(40px,5.5vw,68px)/1.02 var(--serif);letter-spacing:-.055em;margin:14px 0 24px}
+    .about-copy p{font-size:14px;line-height:1.9;color:#625e55;max-width:650px}
+    .pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.pill-list span{border:1px solid var(--line);border-radius:50px;padding:9px 12px;font:10px var(--mono);text-transform:uppercase}
+    .contact{background:var(--ink);color:var(--paper);padding:90px 0 28px}
+    .contact .eyebrow{color:#b8b1a6}.contact h2{font:500 clamp(52px,8vw,100px)/.95 var(--serif);letter-spacing:-.065em;margin:20px 0 25px;max-width:850px}
+    .contact h2 em{color:#d98d79}.contact p{font-size:14px;line-height:1.8;color:#c7bfb3;max-width:480px}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 75px}.contact .button{border-color:#aaa398}.contact .button.dark{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+    footer{border-top:1px solid rgba(243,238,229,.2);padding-top:20px;display:flex;justify-content:space-between;gap:15px;font:10px var(--mono);color:#aaa398}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:800px){
+      .wrap{width:calc(100% - 34px)}.nav-inner{align-items:flex-start;padding:16px 0;flex-direction:column;gap:12px}
+      .navlinks{width:100%;overflow-x:auto;padding-bottom:3px;gap:17px;white-space:nowrap}.navlinks .contact-link{padding:8px 11px}
+      .hero{grid-template-columns:1fr;min-height:unset;padding:60px 0 70px;gap:35px}.hero h1{font-size:clamp(60px,15vw,92px)}
+      .hero-art{justify-self:center;max-width:350px}.section-head{display:block}.section-head p{margin-top:18px}
+      section.content{padding:70px 0}.discipline-grid,.projects,.about-grid{grid-template-columns:1fr;gap:16px}
+      .about-grid{gap:35px}.seal{max-width:220px}.project-visual{min-height:290px}
+      .contact{padding-top:70px}footer{flex-direction:column}
     }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header class="wrap topbar">
-    <a class="brand" href="index.html">prachi<span>.</span></a>
-    <a class="back" href="index.html#work">← Back to selected work</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#home">prachi<b>.</b></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#poetry">Poetry writing</a>
+        <a href="#advertising">Advertising & storytelling</a>
+        <a href="#visual-design">Visual design</a>
+        <a href="#research">Brand communication research</a>
+        <a class="contact-link" href="#contact">Let’s talk ↗</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="home">
     <section class="wrap hero">
       <div>
-        <div class="eyebrow">Self-initiated concept · Brand storytelling</div>
-        <h1>The taste<br>of being <em>little.</em></h1>
-        <p class="dek">A Paper Boat Aam Panna campaign concept about the summers we remember—not because they were perfect, but because we were little enough to live inside them.</p>
-        <div class="meta"><span>Brand · Paper Boat</span><span>Product · Aam Panna</span><span>Format · Film + social</span></div>
-        <p class="disclaimer">An independent, speculative portfolio concept. Not commissioned by, affiliated with, or endorsed by Paper Boat.</p>
+        <div class="eyebrow">A creative practice · Words, worlds & ways of seeing</div>
+        <h1>I notice.<br>I imagine.<br><em>I make.</em></h1>
+        <p class="hero-copy">A space for the things I’m curious about: poetry that gives feelings a language, advertising that finds the human truth, visual design that sets a mood, and research that asks why a brand matters.</p>
+        <div class="hero-actions"><a class="button dark" href="#disciplines">Explore my practice <span>↘</span></a><a class="button" href="#selected-work">Selected work <span>↗</span></a></div>
       </div>
-      <div class="hero-visual" aria-label="Illustrated summer scene with a paper boat">
-        <span class="hero-stamp mono">CREATIVE STUDY / 01</span>
-        <div class="sun"></div><div class="horizon"></div><div class="water"></div><div class="paperboat"></div>
-        <span class="visual-caption">Some summers stay.</span>
+      <div class="hero-art" aria-label="Abstract botanical artwork in warm colors">
+        <div class="art-mark">FIELD NOTES / PRACTICE 001</div>
+        <div class="art-base"><div class="art-sun"></div><div class="art-ring"></div><div class="art-stem"></div><div class="art-leaf a"></div><div class="art-leaf b"></div></div>
+        <div class="art-note">An idea, taking shape.</div>
       </div>
     </section>
 
-    <div class="band"><div class="wrap"><p>“A little sip. A whole summer, remembered.”</p></div></div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Poetry ✳ Advertising ✳ Brand stories ✳ Visual design ✳ Research ✳ Human observations ✳</span><span>Poetry ✳ Advertising ✳ Brand stories ✳ Visual design ✳ Research ✳ Human observations ✳</span></div></div>
 
-    <section class="insight">
+    <section class="content wrap" id="disciplines">
+      <div class="section-head reveal"><div><div class="eyebrow">01 / What I explore</div><h2>Four ways of<br>making meaning.</h2></div><p>Different disciplines, one shared instinct: to pay attention to people, to details, and to what sits beneath the obvious.</p></div>
+      <div class="discipline-grid">
+        <a class="discipline reveal" id="poetry" href="#selected-work"><span class="num">01 — WORDS & FEELINGS</span><div><h3>Poetry<br>writing</h3><p>Poems, fragments, and little stories that hold what ordinary conversation sometimes can’t.</p></div><span class="link">↗</span><div class="decor"></div></a>
+        <a class="discipline reveal" id="advertising" href="#selected-work"><span class="num">02 — IDEAS & HUMAN TRUTH</span><div><h3>Advertising &<br>brand storytelling</h3><p>Campaign ideas built from real observations—where a product meets a feeling, a ritual, or a life.</p></div><span class="link">↗</span><div class="decor"></div></a>
+        <a class="discipline reveal" id="visual-design" href="#selected-work"><span class="num">03 — FORM & ATMOSPHERE</span><div><h3>Visual<br>design</h3><p>Art direction, visual worlds, layouts, and experiments that give an idea a look and a sense of place.</p></div><span class="link">↗</span><div class="decor"></div></a>
+        <a class="discipline reveal" id="research" href="#selected-work"><span class="num">04 — CONTEXT & CURIOSITY</span><div><h3>Brand communication<br>research</h3><p>Looking at brand voice, audience behavior, culture, and category cues to understand what a brand can meaningfully say.</p></div><span class="link">↗</span><div class="decor"></div></a>
+      </div>
+    </section>
+
+    <section class="content selected" id="selected-work">
       <div class="wrap">
-        <div class="section-title">
-          <div><div class="eyebrow">01 / The starting point</div><h2>What if nostalgia<br>wasn’t a place?</h2></div>
-          <div><p>We often remember childhood through tiny sensory details: the sharp taste of raw mango, a paper boat floating in the first rain, the afternoon fan, a voice calling us home.</p><p>The campaign takes Aam Panna beyond refreshment and places it inside a familiar emotional moment—summer, seen through the eyes of a child.</p></div>
-        </div>
-        <div class="insight-grid">
-          <article class="insight-card"><span class="eyebrow">Human insight</span><h3>We don’t miss being young every day.</h3><p>We miss the small, unplanned moments when time felt generous: one more game, one more sip, one more minute outside.</p></article>
-          <article class="insight-card"><span class="eyebrow">Brand opportunity</span><h3>Make the memory tangible.</h3><p>Use the familiar taste of aam panna as a gentle doorway into a summer memory—without making the product promise to bring childhood back.</p></article>
-        </div>
-        <p class="big-quote">“The taste of being little.”</p>
-      </div>
-    </section>
-
-    <section class="wrap">
-      <div class="section-title">
-        <div><div class="eyebrow">02 / The film</div><h2>Three scenes.<br>One summer.</h2></div>
-        <div><p>A 30–40 second film, told in warm, tactile fragments. The camera stays close to the small things. No big speech. Just the texture of a day that feels familiar.</p></div>
-      </div>
-      <div class="storyboard">
-        <article class="scene">
-          <div class="scene-art"><span class="number">SCENE 01 / 00:00–00:10</span><div class="circle"></div><div class="artline"></div><div class="head"></div><div class="kid"></div><div class="boat"></div></div>
-          <div class="scene-copy"><span class="eyebrow">The afternoon</span><h3>“Bas paanch minute aur.”</h3><p>A child sits in the courtyard, making a paper boat from an old notebook page. Sunlight is strong; the ceiling fan hums in the background. Someone calls from inside. The child asks for five more minutes.</p></div>
-        </article>
-        <article class="scene">
-          <div class="scene-art"><span class="number">SCENE 02 / 00:10–00:25</span><div class="circle"></div><div class="artline"></div><div class="head"></div><div class="kid"></div><div class="boat"></div></div>
-          <div class="scene-copy"><span class="eyebrow">The little ritual</span><h3>Aam panna. A paper boat.</h3><p>A glass of aam panna appears beside the child. The first sip, the sour-sweet expression, the boat placed into a shallow stream of rainwater. Let the sound design carry the memory.</p></div>
-        </article>
-        <article class="scene">
-          <div class="scene-art"><span class="number">SCENE 03 / 00:25–00:40</span><div class="circle"></div><div class="artline"></div><div class="head"></div><div class="kid"></div><div class="boat"></div></div>
-          <div class="scene-copy"><span class="eyebrow">The return</span><h3>Some things stay with us.</h3><p>Match cut to an adult hand holding Paper Boat Aam Panna near a window on a hot day. A paper boat sits on the desk. The sound of a distant call home lingers.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="script">
-      <div class="wrap">
-        <div class="section-title">
-          <div><div class="eyebrow">03 / Script & sound</div><h2>Let the feeling<br>do the talking.</h2></div>
-          <div><p>Keep the voiceover sparse. The film should feel like a memory someone stumbled into—not an explanation of the product.</p></div>
-        </div>
-        <div class="script-box">
-          <h3>Voiceover — draft</h3>
-          <p class="direction">VO · Warm, intimate, unhurried</p>
-          <p>“Garmi ki chhuttiyaan…”</p>
-          <p>“Jab paanch minute aur mil jaate the.”</p>
-          <p>“Jab baarish ka paani bhi samandar lagta tha.”</p>
-          <p>“Aur aam panna… bas aam panna nahi tha.”</p>
-          <p>“Woh ek poora mausam tha.”</p>
-          <p class="direction">End frame</p>
-          <p><strong>Paper Boat Aam Panna</strong><br><em>The taste of being little.</em></p>
+        <div class="section-head reveal"><div><div class="eyebrow">02 / Selected work & studies</div><h2>Ideas, made<br>visible.</h2></div><p>A growing collection of self-initiated concepts, writing, and visual explorations. Each project begins with a question worth staying with.</p></div>
+        <div class="projects">
+          <a class="project reveal" href="paperboat.html"><div class="project-visual paperboat-visual"><span class="tag">Campaign concept / 01</span><h3>The taste<br>of being <em>little.</em></h3></div><div class="project-info"><div><h4>Paper Boat · Aam Panna</h4><p>A memory-led summer campaign concept, from insight to film and campaign extensions.</p></div><span>↗</span></div></a>
+          <a class="project reveal" href="#poetry"><div class="project-visual poetry-visual"><span class="tag">Poetry / 02</span><h3>Some feelings<br>need a page.</h3></div><div class="project-info"><div><h4>Poetry & fragments</h4><p>Words shaped around love, identity, home, and the small moments in between.</p></div><span>↗</span></div></a>
         </div>
       </div>
     </section>
 
-    <section class="wrap">
-      <div class="section-title">
-        <div><div class="eyebrow">04 / Campaign world</div><h2>One thought.<br>Many little moments.</h2></div>
-        <div><p>Build a cohesive campaign around the central thought, with different memory-led executions for social, outdoor, and in-store storytelling.</p></div>
-      </div>
-      <div class="campaign-grid">
-        <article class="campaign-card"><span class="eyebrow">Film</span><h3>The taste of being little</h3><p>A 30–40 second hero film, with sensory close-ups and a gentle transition from childhood to adulthood.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Social series</span><h3>“Bas paanch minute aur”</h3><p>Short reels built around childhood summer moments: one more game, one more paper boat, one more sip.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Outdoor / print</span><h3>Some summers stay.</h3><p>Minimal visual: a paper boat, a glass of aam panna, and a line that leaves space for the audience’s own memory.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Participation</span><h3>Tell us your summer.</h3><p>Invite people to share a tiny childhood summer memory. Curate community stories into a digital “summer scrapbook.”</p></article>
+    <section class="content wrap" id="about">
+      <div class="about-grid">
+        <div class="seal reveal"><span>Curiosity<br>is a way<br>of <i>looking.</i></span></div>
+        <div class="about-copy reveal"><div class="eyebrow">03 / A little about me</div><h2>Part researcher.<br>Part storyteller.<br><em>Always observing.</em></h2><p>I’m Prachi. I’m drawn to the overlap between how people think, what they feel, and the stories they carry. I move between analytical research and creative expression—looking for the insight that makes an idea feel honest.</p><p>This portfolio is my evolving creative practice: a place for brand concepts, poetry, visual experiments, and the questions that lead to them.</p><div class="pill-list"><span>Human-first ideas</span><span>Emotional clarity</span><span>Culture & context</span><span>Curious by nature</span></div></div>
       </div>
     </section>
 
-    <section class="wrap">
-      <div class="section-title">
-        <div><div class="eyebrow">05 / Art direction</div><h2>Sun-warmed.<br>Handmade. Familiar.</h2></div>
-        <div><p>Art direction should evoke memory through material and atmosphere—not through a pile of nostalgic props.</p></div>
-      </div>
-      <div class="campaign-grid">
-        <article class="campaign-card"><span class="eyebrow">Palette</span><h3>Mango, paper, monsoon green</h3><p>Warm mango yellow, faded notebook cream, earthy terracotta, and soft leafy green. Slightly imperfect, never overly polished.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Camera</span><h3>Close to the little details</h3><p>Macro textures: condensation, a folded paper edge, fingers holding a glass, water moving around the boat. Natural daylight.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Sound</span><h3>Let the room remember</h3><p>Fan hum, distant neighbourhood sounds, water, a steel glass on a table. Music enters subtly rather than cueing emotion loudly.</p></article>
-        <article class="campaign-card"><span class="eyebrow">Typography</span><h3>Handwritten, not childish</h3><p>Pair a restrained serif headline with handwritten accents. Keep product and brand marks clear in the end frame.</p></article>
-      </div>
-    </section>
-
-    <section class="closing">
-      <div class="wrap">
-        <div class="eyebrow">06 / The idea in one line</div>
-        <h2>Some summers<br>stay on the tongue.</h2>
-        <p>Paper Boat Aam Panna becomes a small sensory reminder of a childhood summer: not a promise to turn back time, but a taste that lets a memory visit.</p>
-        <a class="btn" href="index.html#work">← Back to the portfolio</a>
-      </div>
-    </section>
+    <section class="contact" id="contact"><div class="wrap">
+      <div class="eyebrow">04 / Open to collaborations</div><h2>Let’s make<br>something <em>meaningful.</em></h2><p>Have a brand, a story, or a half-formed idea you’d like to explore? I’d love to hear what you’re thinking.</p>
+      <div class="contact-actions"><a class="button dark" href="mailto:hello@example.com">Write me an email ↗</a><a class="button" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+      <footer><span>© <span id="year">2026</span> Prachi · A practice in progress</span><span>Words, worlds & ways of seeing.</span><a href="#home">Back to top ↑</a></footer>
+    </div></section>
   </main>
-  <footer class="wrap"><span>© Prachi · Independent concept study</span><span>Storytelling / Campaign / Art direction</span><a href="#top">Back to top ↑</a></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
-'''
-<!-- p = Path("/mnt/data/paperboat.html")
-p.write_text(paperboat, encoding="utf-8")
-print(f"Created {p} ({p.stat().st_size:,} bytes)") -->
+<!-- '''
+path = Path("/mnt/data/creative_homepage.html")
+path.write_text(html, encoding="utf-8")
+print(f"Created {path} ({path.stat().st_size:,} bytes)") -->
