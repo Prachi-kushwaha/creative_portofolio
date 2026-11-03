@@ -1177,10 +1177,10 @@ h2 em {
     max-height: 90vh;
     overflow-y: auto;
 
-    background: #f4efe6;
+    background: #8e292f;
     color: #171414;
 
-    border: 1px solid #a12b36;
+    border: 1px solid #c8bdb1;
 
     transform: translateY(30px);
 
@@ -1207,7 +1207,7 @@ h2 em {
 
     color: #171414;
 
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 300;
 
     display: grid;
@@ -1285,7 +1285,7 @@ h2 em {
     font-size: 20px;
     line-height: 2;
 
-    color: #342c28;
+    color:#d2c6b9;
 
     white-space: pre-line;
 }

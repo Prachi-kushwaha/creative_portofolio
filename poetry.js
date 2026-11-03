@@ -19,13 +19,53 @@ const backdrop = document.querySelector(".modal-backdrop");
 const poems = {
 
     "Acchi Ladki": `
-        Your actual poem goes here.
+        Bachpan se humein ek hi kahani sunayi jaati hai...
+        Achhi ladki bano.
+        Zyada mat bolo.
+        Seedha chalo.
+        Sar jhukakar baat karo.
+        Sabki baat maan lo.
+        Aur pata hi nahi chalta...
+        kab "achha insaan" banne ki chahat,
+        "khud ko kho dene" mein badal jaati hai.
+        ......
+        Maine bhi koshish ki thi.
+        School mein achhe number laaye.
+        Kabhi kisi se badtameezi nahi ki.
+        Mehman aaye to muskurayi.
+        Rishta aaye to chai bhi le gayi.
+        Har us jagah "haan" kahi,
+        jahaan mera dil "nahin" kehna chahta tha.
+        Aur sab kehte the...
+        "Kitni samajhdaar ladki hai."
+        Lekin...
+        kisi ne kabhi yeh nahi poocha...
+        ki mujhe samajhne ki koshish kisne ki?
+        ...
 
-        Keep each stanza separated
-        by an empty line.
+        Mujhe yaad hai...
+        ek din school ki copy ke aakhri panne par maine likha tha—
+        "Main badi hokar kya banna chahti hoon?"
+        Us din maine doctor nahi likha.
+        Engineer nahi.
+        Teacher nahi.
+        Maine sirf ek lafz likha tha...
+        "Azaad."
 
-        The poem will appear beautifully
-        inside the reading panel.
+        Us waqt mujhe us lafz ka matlab bhi nahi maloom tha.
+        Bas itna jaanti thi...
+        ki kuch tha...
+        jo mujhe andar hi andar pukarta tha.
+        ...
+
+        Ghar mein sab mujhe samajhte the.
+        Mohalle wale mujhe jaante the.
+        Rishta-daar meri tareef karte the.
+        Lekin...
+        har raat diary ka ek safha mujhe dekhkar poochhta tha—
+        "Aur tum?
+        Tum khud ko jaanti ho?"
+        ...
     `,
 
     "Kyun?": `
