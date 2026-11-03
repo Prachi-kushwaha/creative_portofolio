@@ -1121,3 +1121,236 @@ h2 em {
     }
 
 }
+
+
+
+/* =====================================
+   POETRY MODAL
+===================================== */
+
+.poetry-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.35s ease,
+                visibility 0.35s ease;
+}
+
+/* Modal opens */
+
+.poetry-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dark background */
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(8px);
+}
+
+/* Reading panel */
+
+.modal-panel {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #f4efe6;
+    color: #171414;
+
+    border: 1px solid #a12b36;
+
+    transform: translateY(30px);
+
+    transition: transform 0.35s ease;
+}
+
+.poetry-modal.active .modal-panel {
+    transform: translateY(0);
+}
+
+/* Close button */
+
+.modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    background: transparent;
+    border: 1px solid #c8bdb1;
+
+    color: #171414;
+
+    font-size: 32px;
+    font-weight: 300;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #9f1d2b;
+    color: white;
+    border-color: #9f1d2b;
+
+    transform: rotate(90deg);
+}
+
+/* Modal content */
+
+.modal-content {
+    padding: 70px 10%;
+}
+
+/* Top information */
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: #8e292f;
+}
+
+/* Title */
+
+.modal-title {
+    margin-top: 90px;
+    margin-bottom: 45px;
+}
+
+.modal-title h2 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    line-height: 1.1;
+    font-weight: 400;
+
+    margin-top: 20px;
+}
+
+.modal-divider {
+    width: 100%;
+    height: 1px;
+
+    background: #d2c6b9;
+
+    margin-bottom: 50px;
+}
+
+/* Poem */
+
+.poem-text {
+    max-width: 580px;
+    margin: auto;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 20px;
+    line-height: 2;
+
+    color: #342c28;
+
+    white-space: pre-line;
+}
+
+.poem-text p {
+    margin-bottom: 25px;
+}
+
+/* Bottom information */
+
+.modal-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid #d2c6b9;
+
+    margin-top: 80px;
+    padding-top: 25px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #8e292f;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .poetry-modal {
+        padding: 10px;
+    }
+
+    .modal-panel {
+        max-height: 95vh;
+    }
+
+    .modal-content {
+        padding: 60px 7% 40px;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .modal-title {
+        margin-top: 65px;
+    }
+
+    .modal-title h2 {
+        font-size: 3rem;
+    }
+
+    .poem-text {
+        font-size: 17px;
+        line-height: 1.9;
+    }
+
+    .modal-bottom {
+        margin-top: 50px;
+    }
+
+}
