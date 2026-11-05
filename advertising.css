@@ -1199,7 +1199,7 @@ a {
     margin: 0;
 
     font-size: clamp(75px, 7vw, 185px);
-    line-height: 0.88;
+    line-height: 1.0;
     letter-spacing: -0.075em;
 }
 

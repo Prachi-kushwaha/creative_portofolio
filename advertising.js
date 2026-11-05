@@ -58,9 +58,9 @@ const campaigns = {
         number: "02",
         brand: "PAPER BOAT",
         type: "EMOTIONAL FILM",
-        name: "Somewhere Between.",
+        name: "The Taste of Then",
         tagline: "There is still a little home.",
-        theme: "Somewhere between childhood and now.",
+        theme: "Somewhere between childhood and now",
 
         description:
             "A story about childhood, memory, and the taste of something familiar.",
