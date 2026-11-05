@@ -1,0 +1,1823 @@
+
+:root {
+    --cream: #f5f1e9;
+    --paper: #fffdf8;
+    --ink: #25231f;
+    --muted: #77736b;
+    --red: #a53d2d;
+    --line: #d9d2c6;
+    --dark: #282721;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+/* NAVIGATION */
+
+.navbar {
+    height: 82px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    flex-shrink: 0;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+/* Let's Connect button */
+
+.nav-contact {
+    font-size: 12px;
+    border: 1px solid var(--ink);
+    border-radius: 30px;
+    padding: 11px 17px;
+    white-space: nowrap;
+    margin-left: 0;
+    transition: 0.3s ease;
+}
+
+.nav-contact:hover {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 95px 7% 65px;
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero h1 em {
+    color: var(--red);
+    font-weight: 400;
+}
+
+.hero-description {
+    margin-top: 28px;
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 21px;
+    background: var(--ink);
+    color: white;
+    font-size: 12px;
+    transition: 0.25s;
+}
+
+.primary-button:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+}
+
+.text-link {
+    font-size: 12px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 5px;
+}
+
+.hero-art {
+    min-height: 420px;
+    background: #d8c9b5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-art::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.hero-art::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+.hero-art-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    line-height: 1.2;
+    color: #42372c;
+    transform: rotate(-7deg);
+}
+
+.hero-art-text em {
+    color: var(--red);
+}
+
+.art-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #5e5144;
+}
+
+/* MANIFESTO */
+
+.manifesto {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 38px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.manifesto p {
+    max-width: 760px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.5;
+}
+
+.manifesto span {
+    color: #d49b83;
+    font-style: italic;
+}
+
+.manifesto-label {
+    white-space: nowrap;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #c6bfb1;
+}
+
+/* COMMON SECTION */
+
+.section {
+    padding: 50px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.section-heading h2 em {
+    color: var(--red);
+}
+
+.section-heading p {
+    max-width: 300px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* CAMPAIGNS */
+
+
+/* CAMPAIGN GRID */
+
+.campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 65px 30px;
+}
+
+.campaign-card {
+    display: block;
+    cursor: pointer;
+}
+
+.campaign-visual {
+    min-height: 390px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.campaign-card:hover .campaign-visual {
+    transform: translateY(-5px);
+}
+
+.campaign-number {
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--line);
+}
+
+.campaign-brand {
+    position: absolute;
+    bottom: 22px;
+    right: 24px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--line);
+}
+
+.campaign-info {
+    padding: 22px 0;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.campaign-type {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--red);
+}
+
+.campaign-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 400;
+    margin: 9px 0;
+}
+
+.campaign-info p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.campaign-arrow {
+    font-size: 22px;
+    transition: 0.2s;
+}
+
+.campaign-card:hover .campaign-arrow {
+    color: var(--red);
+    transform: translate(3px, -3px);
+}
+
+
+/* MOKABARO — DARK, GRAPHIC */
+.mokabaro-copy {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f5f1e9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mokabaro-copy span {
+    font-size: 14px;
+    transform: translateY(6px);
+}
+
+.mokabaro-copy h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 0.95;
+    color: #c6c6bc;
+
+    margin:5px 0;
+}
+
+.mokabaro-copy p {
+    font-size: 14px;
+
+    margin-top: 15px;
+}
+
+.mokabaro-visual {
+    background: #30322e;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Suitcase body */
+.mokabaro-visual::before {
+    content: "";
+    position: absolute;
+
+    width: 150px;
+    height: 210px;
+
+    left: 50%;
+    top: 58%;
+
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(
+        110deg,
+        #484b43 0%,
+        #41443d 65%,
+        #383b35 100%
+    );
+
+    border-radius: 12px 12px 9px 9px;
+
+    box-shadow:
+        12px 0 0 #292c27,
+        15px 3px 0 #252823;
+
+    z-index: 0;
+}
+
+/* Handle */
+/* Longer telescopic handle */
+.mokabaro-visual::after {
+    content: "";
+    position: absolute;
+
+    width: 42px;
+    height: 65px;
+
+    left: 50%;
+    top: calc(58% - 170px);
+
+    transform: translateX(-50%);
+
+    border: 5px solid #484b43;
+    border-bottom: none;
+
+    border-radius: 7px 7px 0 0;
+
+    box-shadow: 3px 0 0 #292c27;
+
+    z-index: 0;
+}
+
+
+/* PAPER BOAT — WARM, NOSTALGIC */
+
+.paperboat-visual {
+    background: #d8c6a6;
+    color: #4d4437;
+}
+
+.paperboat-visual::before {
+    content: "";
+    position: absolute;
+    width: 270px;
+    height: 350px;
+    background: #c4a783;
+    border-radius: 48% 48% 0 0;
+    bottom: -160px;
+}
+
+.paperboat-copy {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: "Playfair Display", serif;
+}
+
+.paperboat-copy span {
+    font-size: 14px;
+}
+
+.paperboat-copy h3 {
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin: 12px 0;
+    color: #a04d37;
+}
+
+
+/* BEAUTY OF JOSEON — SOFT, MINIMAL */
+
+.coffee-visual {
+    background: #e7d8d0;
+    color: #5a453d;
+}
+
+.coffee-visual::before {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 300px;
+    background: #c9aaa0;
+    border-radius: 110px 110px 15px 15px;
+    transform: rotate(12deg);
+    opacity: 0.65;
+}
+
+.coffee-copy {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: "Playfair Display", serif;
+}
+
+.coffee-copy span {
+    font-size: 14px;
+}
+
+.coffee-copy h3 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin: 12px 0;
+    color: #9c5e57;
+}
+
+
+/* LIVING WITH ELAN — ROOTED, EARTHY */
+
+.palmonas-visual {
+    background: #b7b19d;
+    color: #39392e;
+}
+
+.palmonas-visual::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(57,57,46,0.35);
+    border-radius: 50%;
+}
+
+.palmonas-visual::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(57,57,46,0.25);
+    border-radius: 50%;
+}
+
+.palmonas-copy {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: "Playfair Display", serif;
+}
+
+.palmonas-copy span {
+    font-size: 14px;
+}
+
+.palmonas-copy h3 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+
+/* CREATIVE PROCESS — EDITORIAL TIMELINE */
+
+.creative-process {
+    padding: 105px 7%;
+    background: #e8e1d5;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+}
+
+.process-intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.08;
+    font-weight: 400;
+}
+
+.process-intro h2 em {
+    color: var(--red);
+}
+
+.process-description {
+    max-width: 360px;
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.process-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.process-timeline::before {
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 15px;
+    bottom: 35px;
+    width: 1px;
+    background: #bcb2a3;
+}
+
+.process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 0 45px;
+}
+
+.step-number {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--red);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+    z-index: 1;
+}
+
+.step-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--red);
+}
+
+.step-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin: 8px 0;
+}
+
+.step-content p {
+    max-width: 390px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .creative-process {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding: 75px 5%;
+    }
+
+    .campaign-visual {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 600px) {
+    .campaign-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .campaign-visual {
+        min-height: 300px;
+    }
+
+    .creative-process {
+        padding: 65px 5%;
+    }
+
+    .process-intro h2 {
+        font-size: 46px;
+    }
+}
+
+
+
+/* APPROACH */
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+}
+
+.approach-item {
+    padding: 5px 30px 20px 0;
+}
+
+.approach-item + .approach-item {
+    border-left: 1px solid var(--line);
+    padding-left: 30px;
+}
+
+.approach-number {
+    font-size: 11px;
+    color: var(--red);
+}
+
+.approach-item h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    font-weight: 400;
+    margin: 25px 0 15px;
+}
+
+.approach-item p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* POETRY BRIDGE */
+
+.poetry-bridge {
+    background: var(--red);
+    color: var(--paper);
+    padding: clamp(60px, 8vw, 110px) 7%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle editorial detail */
+.poetry-bridge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7%;
+    width: 70px;
+    height: 3px;
+    background: #e9c5b7;
+}
+
+.bridge-content {
+    max-width: 850px;
+}
+
+.bridge-eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: #e9c5b7;
+    margin-bottom: 45px;
+}
+
+/* Individual thoughts */
+.bridge-thought {
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.thought-number {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #e9c5b7;
+    padding-top: 6px;
+}
+
+.poetry-bridge h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(19px, 2.1vw, 27px);
+    line-height: 1.45;
+    font-weight: 400;
+    color: #f5ded4;
+    margin: 0;
+}
+
+.poetry-bridge h2 em {
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* Separation between thoughts */
+.bridge-thought.second {
+    margin-top: 35px;
+    padding-top: 35px;
+    border-top: 1px solid rgba(245, 222, 212, 0.25);
+}
+
+/* CTA */
+.bridge-cta {
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.cta-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #e9c5b7;
+}
+
+.light-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--paper);
+    text-decoration: none;
+
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.light-button .arrow {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.light-button:hover {
+    background: var(--paper);
+    color: var(--red);
+    border-color: var(--paper);
+}
+
+.light-button:hover .arrow {
+    transform: translate(3px, -3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .poetry-bridge {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 65px 7%;
+    }
+
+    .bridge-eyebrow {
+        margin-bottom: 30px;
+    }
+
+    .bridge-thought {
+        grid-template-columns: 25px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .poetry-bridge h2 {
+        font-size: clamp(19px, 5vw, 24px);
+        line-height: 1.5;
+    }
+
+    .bridge-thought.second {
+        margin-top: 28px;
+        padding-top: 28px;
+    }
+
+    .bridge-cta {
+        min-width: unset;
+    }
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 110px 7%;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.contact-section h2 em {
+    color: var(--red);
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 30px 7%;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer p,
+.footer a:last-child {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 70px 5%;
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero-art {
+        min-height: 350px;
+    }
+
+    .section {
+        padding: 75px 5%;
+    }
+
+    .featured-work {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 400px;
+    }
+
+    .featured-content {
+        padding: 60px 8%;
+    }
+
+    .manifesto,
+    .poetry-bridge {
+        padding: 45px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-contact {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .campaign-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campaign-visual {
+        min-height: 300px;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-item,
+    .approach-item + .approach-item {
+        border-left: none;
+        border-bottom: 1px solid var(--line);
+        padding: 30px 0;
+    }
+
+    .manifesto,
+    .poetry-bridge {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+    }
+
+    .footer p {
+        order: 3;
+        width: 100%;
+    }
+}
+
+
+/* Campaign Overlay */
+
+/* =========================================
+   CAMPAIGN OVERLAY — EDITORIAL CASE STUDY
+========================================= */
+
+.campaign-overlay {
+    --paper: #f4f0e7;
+    --ink: #30332d;
+    --rust: #b84f38;
+    --olive: #777b61;
+    --muted: #858477;
+    --line: rgba(48, 51, 45, 0.2);
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s cubic-bezier(.2, .8, .2, 1),
+        visibility 0.45s ease;
+
+    overflow: hidden;
+}
+
+.campaign-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.campaign-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #b8b2a5 transparent;
+}
+
+.campaign-content * {
+    box-sizing: border-box;
+}
+
+.campaign-content h1,
+.campaign-content h2,
+.campaign-content h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+.campaign-content p {
+    margin-top: 0;
+}
+
+.campaign-content section {
+    position: relative;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.campaign-close {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 10001;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(48, 51, 45, 0.15);
+    border-radius: 50%;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.campaign-close:hover {
+    background: var(--rust);
+    color: white;
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.campaign-hero {
+    min-height: 75vh;
+    padding: 30px 7vw 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow: hidden;
+    position: relative;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 75%,
+            rgba(184, 79, 56, 0.1),
+            transparent 35%
+        ),
+        var(--paper);
+}
+
+.campaign-hero::after {
+    content: "01";
+
+    position: absolute;
+    right: 4vw;
+    bottom: 5vh;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(220px, 35vw, 500px);
+    line-height: 0.75;
+
+    color: rgba(48, 51, 45, 0.035);
+    pointer-events: none;
+}
+
+.campaign-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.campaign-meta span:last-child {
+    color: var(--rust);
+}
+
+
+.campaign-hero .eyebrow {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 180px; /* controls gap from meta to brand */
+    margin-bottom: 12px;
+
+    color: var(--rust);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.campaign-hero h1 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1100px;
+    margin: 0;
+
+    font-size: clamp(75px, 7vw, 185px);
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+}
+
+.hero-subtitle {
+    position: relative;
+    z-index: 1;
+
+    max-width: 550px;
+    margin-top: 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 3vw, 40px);
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--olive);
+}
+
+/* .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 25px;
+    border-top: 1px solid var(--line);
+
+    font-size: 10px;
+    letter-spacing: 0.15em;
+} */
+
+
+/* =========================================
+   IDEA / OVERVIEW
+========================================= */
+
+.campaign-overview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8vw;
+
+    padding: 50px 9vw;
+
+    background: #e5d6c6;
+}
+
+.overview-label {
+    /* display: flex; */
+    align-items: flex-start;
+    gap: 18px;
+
+    color: var(--rust);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+}
+
+/* .overview-label span{
+    margin-bottom: 10px;
+} */
+
+.overview-label p {
+    margin-top: 25px;
+    color: var(--ink);
+}
+
+.overview-label h3 {
+    margin-top: 35px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.overview-label span {
+    color: var(--ink);
+}
+
+.overview-label p {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #55564f;
+}
+
+.overview-content {
+    max-width: 850px;
+}
+
+.overview-content h2 {
+    margin: 0 0 35px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(14px, 1.3vw, 17px);
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.overview-content h2 em {
+    display: block;
+    margin-top: 15px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 6vw, 85px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+
+    color: var(--rust);
+}
+
+.campaign-description {
+    max-width: 680px;
+
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.8;
+    color: #55564f;
+}
+
+.campaign-insight {
+    max-width: 620px;
+
+    margin-top: 40px;
+    padding: 25px 30px;
+
+    border-left: 2px solid var(--rust);
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(20px, 2.3vw, 30px);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SCRIPT — DARK SCREENPLAY
+========================================= */
+
+.campaign-script {
+    padding: 100px 9vw 120px;
+
+    background: #30332d;
+    color: var(--paper);
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(244, 240, 231, 0.2);
+
+    color: #d9a17b;
+
+    font-size: 10px;
+    letter-spacing: 0.17em;
+}
+
+.section-top p {
+    margin: 0;
+}
+
+.campaign-script > h2 {
+    margin: 90px 0 70px 15%;
+
+    font-size: clamp(65px, 10vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+.campaign-script > h2 em {
+    color: #d9a17b;
+}
+
+.script-content {
+    max-width: 1000px;
+    margin-left: 15%;
+}
+
+.script-line {
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 25px;
+
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(244, 240, 231, 0.17);
+}
+
+.script-number {
+    padding-top: 5px;
+
+    color: #d9a17b;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+.script-type {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    color: #aaa99e;
+
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+.script-line p {
+    max-width: 750px;
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(15px, 2.4vw, 10px);
+    line-height: 1.6;
+}
+
+.script-ending {
+    margin: 100px 0 0 15%;
+    padding: 50px 0 0;
+
+    border-top: 1px solid rgba(244, 240, 231, 0.2);
+}
+
+.script-ending > p {
+    color: #d9a17b;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+.script-ending h3 {
+    max-width: 700px;
+    margin: 25px 0;
+
+    font-size: clamp(35px, 5vw, 65px);
+    line-height: 1.1;
+}
+
+.script-ending > span {
+    color: #aaa99e;
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================
+   SCENE BREAKDOWN
+========================================= */
+
+.campaign-scenes {
+    padding: 120px 8vw;
+
+    background: var(--paper);
+}
+
+.campaign-scenes .section-top {
+    color: var(--rust);
+    border-color: var(--line);
+}
+
+.campaign-scenes > h2 {
+    margin: 80px 0;
+
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.campaign-scenes > h2 em {
+    color: var(--rust);
+}
+
+.scene-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.scene-card {
+    background: #e8dfd1;
+    overflow: hidden;
+}
+
+.scene-visual {
+    height: 300px;
+    padding: 25px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.scene-visual::before {
+    content: "";
+
+    position: absolute;
+    width: 220px;
+    height: 220px;
+
+    right: -40px;
+    bottom: -70px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(48, 51, 45, 0.2);
+}
+
+.scene-visual::after {
+    content: "";
+
+    position: absolute;
+    width: 140px;
+    height: 140px;
+
+    right: 0;
+    bottom: -30px;
+
+    border-radius: 50%;
+    background: rgba(184, 79, 56, 0.15);
+}
+
+.scene-visual span {
+    position: relative;
+    z-index: 1;
+
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--rust);
+}
+
+/* Different visual moods for each scene */
+
+.scene-1 {
+    background: #ded0bd;
+}
+
+.scene-2 {
+    background: #d5d8c8;
+}
+
+.scene-3 {
+    background: #d9b9a9;
+}
+
+.scene-2::after {
+    width: 180px;
+    height: 180px;
+    background: rgba(119, 123, 97, 0.2);
+}
+
+.scene-3::before {
+    width: 280px;
+    height: 280px;
+    border-radius: 0;
+    transform: rotate(35deg);
+}
+
+.scene-info {
+    padding: 30px;
+}
+
+.scene-info h3 {
+    margin: 0 0 15px;
+
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.1;
+}
+
+.scene-info p {
+    min-height: 75px;
+
+    color: #66665d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.scene-info > span {
+    display: block;
+    margin-top: 25px;
+
+    color: var(--rust);
+
+    font-size: 9px;
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   SHOOT DIRECTION
+========================================= */
+
+.campaign-shoot {
+    padding: 120px 9vw;
+
+    background: #d7d9cb;
+}
+
+.campaign-shoot .section-top {
+    color: var(--rust);
+    border-color: var(--line);
+}
+
+.campaign-shoot > h2 {
+    margin: 80px 0;
+
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.campaign-shoot > h2 em {
+    color: var(--rust);
+}
+
+.shoot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 60px;
+}
+
+.shoot-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+
+    padding: 35px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+.shoot-item > span {
+    color: var(--rust);
+
+    font-size: 10px;
+    letter-spacing: 0.15em;
+}
+
+.shoot-item h3 {
+    margin: 0;
+
+    font-size: clamp(27px, 3vw, 38px);
+}
+
+.shoot-item p {
+    margin-top: 15px;
+
+    color: #62645b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CLOSING FRAME
+========================================= */
+
+.campaign-closing {
+    min-height: 75vh;
+    padding: 100px 9vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow: hidden;
+
+    background: var(--rust);
+    color: var(--paper);
+}
+
+.campaign-closing::after {
+    content: "FEEL";
+
+    position: absolute;
+    right: -2vw;
+    bottom: -5vh;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(150px, 28vw, 400px);
+    line-height: 0.8;
+
+    color: rgba(244, 240, 231, 0.07);
+    pointer-events: none;
+}
+
+.campaign-closing > p {
+    position: relative;
+    z-index: 1;
+
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+.campaign-closing h2 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1100px;
+    margin: 40px 0;
+
+    font-size: clamp(55px, 7vw, 125px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.campaign-closing h2 em {
+    font-weight: 400;
+}
+
+.campaign-closing > span {
+    position: relative;
+    z-index: 1;
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.campaign-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 25px 8vw;
+
+    background: #242620;
+    color: #c5c2b7;
+
+    font-size: 9px;
+    letter-spacing: 0.16em;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+    .campaign-overview {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .scene-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .campaign-script > h2,
+    .script-content,
+    .script-ending {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .campaign-hero {
+        min-height: 85vh;
+        padding: 25px 6vw;
+    }
+
+    .campaign-meta,
+    .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .campaign-hero h1 {
+        font-size: clamp(65px, 17vw, 100px);
+    }
+
+    .campaign-overview,
+    .campaign-script,
+    .campaign-scenes,
+    .campaign-shoot,
+    .campaign-closing {
+        padding: 75px 6vw;
+    }
+
+    .campaign-script > h2,
+    .campaign-scenes > h2,
+    .campaign-shoot > h2 {
+        margin: 60px 0 45px;
+    }
+
+    .script-line {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+    }
+
+    .scene-grid,
+    .shoot-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scene-visual {
+        height: 240px;
+    }
+
+    .scene-info p {
+        min-height: 0;
+    }
+
+    .campaign-footer {
+        flex-direction: column;
+        padding: 25px 6vw;
+    }
+
+    .campaign-close {
+        top: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+    }
+}

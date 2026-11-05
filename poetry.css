@@ -368,17 +368,19 @@ h2 em {
 
 .series-cover {
     aspect-ratio: 1 / 1.15;
+    max-width: 450px;
+    width: 100%;
+    margin: auto;
 
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            #431319,
-            transparent 40%
-        ),
-        #080808;
+    background-image:
+        linear-gradient(rgba(10, 0, 0, 0.25), rgba(10, 0, 0, 0.45)),
+        url("./WM.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     border: 1px solid #4a2025;
-
     padding: 30px;
 
     position: relative;
@@ -393,7 +395,7 @@ h2 em {
 .cover-top {
     font-size: 9px;
     letter-spacing: 3px;
-    color: #9a9292;
+    color: #fffefe;
 }
 
 .cover-title {
@@ -430,7 +432,7 @@ h2 em {
     font-size: 9px;
     letter-spacing: 3px;
     line-height: 2;
-    color: #a29a96;
+    color: #fffefe;
 }
 
 .cover-decoration {
@@ -508,7 +510,7 @@ h2 em {
     gap: 0 60px;
 }
 
-.chapter {
+.chapter-link {
     display: grid;
     grid-template-columns: 35px 1fr 25px;
 
@@ -522,28 +524,28 @@ h2 em {
     transition: 0.3s ease;
 }
 
-.chapter > span:first-child {
+.chapter-link > span:first-child {
     color: var(--red-light);
     font-size: 10px;
 }
 
-.chapter h4 {
+.chapter-link h4 {
     font-family: var(--serif);
     font-weight: 400;
     font-size: 18px;
 }
 
-.chapter-arrow {
+.chapter-link arrow {
     color: #777;
     transition: 0.3s;
 }
 
-.chapter:hover {
+.chapter-link:hover {
     padding-left: 10px;
     color: var(--red-light);
 }
 
-.chapter:hover .chapter-arrow {
+.chapter-link:hover .chapter-arrow {
     color: var(--red-light);
     transform: translate(3px, -3px);
 }
@@ -589,12 +591,13 @@ h2 em {
 
 .poem-card {
     min-width: 0;
+    cursor: pointer;
 }
 
 .poem-art {
-    aspect-ratio: 1 / 1.05;
+    aspect-ratio: 1 / 0.7;
 
-    padding: 35px;
+    padding: 15px;
 
     position: relative;
     overflow: hidden;
@@ -915,149 +918,18 @@ h2 em {
 
 }
 
-
 @media (max-width: 768px) {
-
-    .navbar {
-        height: auto;
-        min-height: 75px;
-
-        flex-wrap: wrap;
-        padding: 20px 5%;
-        gap: 20px;
-    }
-
-    .navbar nav {
-        order: 3;
-        width: 100%;
-
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
-
-    .navbar nav a {
-        white-space: nowrap;
-    }
-
-    .nav-contact {
-        font-size: 11px;
-    }
-
-
-    .hero {
-        grid-template-columns: 1fr;
-
-        padding: 75px 6% 100px;
-        gap: 50px;
-    }
-
-    .hero h1 {
-        font-size: clamp(3rem, 11vw, 5rem);
-    }
-
-    .hero-visual {
-        max-width: 400px;
-    }
-
-    .hero-side-note {
-        right: -20px;
-    }
-
-    .hero-bottom {
-        left: 6%;
-        right: 6%;
-        font-size: 8px;
-    }
-
-
-    .section-padding {
-        padding: 75px 6%;
-    }
-
-    .section-label {
-        margin-bottom: 40px;
-    }
-
-
-    .intro {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-
-    .series-layout {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
     .series-cover {
         max-width: 450px;
         width: 100%;
+        height: 600px;
         margin: auto;
     }
 
     .cover-title {
         font-size: clamp(3rem, 12vw, 5rem);
     }
-
-    .chapter-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .section-heading {
-        flex-direction: column;
-        align-items: start;
-        gap: 25px;
-    }
-
-    .poetry-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .poem-art {
-        aspect-ratio: 1 / 0.85;
-    }
-
-    .poem-info h3 {
-        font-size: 20px;
-    }
-
-
-    .writing-style-layout {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-
-    .storytelling {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .storytelling-decoration {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-
-        font-size: 15px;
-    }
-
-
-    .contact-section h2 {
-        font-size: clamp(2.5rem, 9vw, 4rem);
-    }
-
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
 }
-
 
 @media (max-width: 480px) {
 
@@ -1244,25 +1116,25 @@ h2 em {
     font-size: 10px;
     letter-spacing: 2px;
 
-    color: #8e292f;
+    color: white;;
 }
 
 /* Title */
 
 .modal-title {
-    margin-top: 90px;
-    margin-bottom: 45px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .modal-title h2 {
     font-family: "Playfair Display", Georgia, serif;
 
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
 
     line-height: 1.1;
     font-weight: 400;
 
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .modal-divider {
@@ -1271,19 +1143,19 @@ h2 em {
 
     background: #d2c6b9;
 
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 /* Poem */
 
 .poem-text {
     max-width: 580px;
-    margin: auto;
+    /* margin: auto; */
 
     font-family: "Playfair Display", Georgia, serif;
 
-    font-size: 20px;
-    line-height: 2;
+    font-size: 15px;
+    line-height: 1.5;
 
     color:#d2c6b9;
 
@@ -1291,7 +1163,7 @@ h2 em {
 }
 
 .poem-text p {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* Bottom information */
@@ -1303,7 +1175,7 @@ h2 em {
 
     border-top: 1px solid #d2c6b9;
 
-    margin-top: 80px;
+    margin-top: 40px;
     padding-top: 25px;
 
     font-size: 9px;
